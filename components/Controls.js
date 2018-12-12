@@ -38,6 +38,9 @@ class Controls extends Component {
   }
 
   componentDidMount() {
+    if(!this.props.showControls){
+      return;
+    }
     this.setTimer()
   }
 
