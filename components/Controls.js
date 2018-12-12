@@ -130,7 +130,8 @@ class Controls extends Component {
       currentTime,
       duration,
       theme,
-      inlineOnly
+      inlineOnly,
+      showControls
     } = this.props
 
     const { center, ...controlBar } = theme

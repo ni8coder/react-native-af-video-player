@@ -64,8 +64,7 @@ class Video extends Component {
       progress: 0,
       currentTime: 0,
       seeking: false,
-      renderError: false,
-      showControls: props.showControls
+      renderError: false
     }
     this.animInline = new Animated.Value(Win.width * 0.5625)
     this.animFullscreen = new Animated.Value(Win.width * 0.5625)
@@ -335,8 +334,7 @@ class Video extends Component {
       progress,
       duration,
       inlineHeight,
-      currentTime,
-      showControls
+      currentTime
     } = this.state
 
     const {
@@ -354,7 +352,8 @@ class Video extends Component {
       onMorePress,
       inlineOnly,
       playInBackground,
-      playWhenInactive
+      playWhenInactive,
+      showControls
     } = this.props
 
     const inline = {
