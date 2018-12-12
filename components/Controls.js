@@ -132,6 +132,10 @@ class Controls extends Component {
 
     const { center, ...controlBar } = theme
 
+    if(!showControls){
+      return null;
+    }
+    
     return (
       <Touchable onPress={() => this.hideControls()}>
         <Animated.View style={[styles.container, { opacity: this.animControls }]}>

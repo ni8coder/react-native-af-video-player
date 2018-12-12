@@ -64,7 +64,8 @@ class Video extends Component {
       progress: 0,
       currentTime: 0,
       seeking: false,
-      renderError: false
+      renderError: false,
+      showControls: props.showControls
     }
     this.animInline = new Animated.Value(Win.width * 0.5625)
     this.animFullscreen = new Animated.Value(Win.width * 0.5625)
@@ -334,7 +335,8 @@ class Video extends Component {
       progress,
       duration,
       inlineHeight,
-      currentTime
+      currentTime,
+      showControls
     } = this.state
 
     const {
@@ -421,6 +423,7 @@ class Video extends Component {
           onMorePress={() => onMorePress()}
           theme={setTheme}
           inlineOnly={inlineOnly}
+          showControls={showControls}
         />
       </Animated.View>
     )
@@ -471,7 +474,8 @@ Video.propTypes = {
   logo: PropTypes.string,
   title: PropTypes.string,
   theme: PropTypes.object,
-  resizeMode: PropTypes.string
+  resizeMode: PropTypes.string,
+  showControls: PropTypes.bool
 }
 
 Video.defaultProps = {
@@ -500,7 +504,8 @@ Video.defaultProps = {
   logo: undefined,
   title: '',
   theme: defaultTheme,
-  resizeMode: 'contain'
+  resizeMode: 'contain',
+  showControls: true
 }
 
 export default Video
